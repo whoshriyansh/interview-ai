@@ -52,7 +52,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-background w-screen py-2 border-b border-primary/50">
+    <div className="bg-background w-screen py-1 border-b border-primary/50">
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Image

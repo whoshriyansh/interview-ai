@@ -62,7 +62,12 @@ const HeroSection = () => {
           Made by the<span className="text-primary"> Unemployed</span>, to End
           <span className="text-primary"> Unemployment</span>
         </p>
-        <TypewriterEffectSmooth words={words} />
+        <TypewriterEffectSmooth
+          words={words}
+          className="text-xs sm:text-base md:text-xl lg:text-8xl"
+          isInfinite={true}
+          delay={5}
+        />
       </div>
     </div>
   );
