@@ -59,9 +59,9 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Image
-            src="/assets/Logo.png"
+            src="/assets/interviewai.png"
             width={200}
-            height={500}
+            height={400}
             alt="Logo of the inetrview ai"
           />
         </div>

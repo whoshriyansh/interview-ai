@@ -46,15 +46,21 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(109, 49, 219, 0.25), transparent 80%), #000000",
+          background: `
+      radial-gradient(
+        ellipse 80% 60% at 50% 100%,
+        var(--color-primary) 0%,
+        transparent 80%
+      ),
+      var(--color-background)
+    `,
         }}
       />
       ;
       <div className="flex flex-col  items-center z-10">
-        <p className={` font-normal text-lg`}>
-          Tool by a Job <span className="text-primary">Aspirants</span> for Job
-          <span className="text-primary"> Aspirants</span>
+        <p className={`text-foreground font-normal text-lg`}>
+          Made by the<span className="text-primary"> Unemployed</span>, to End
+          <span className="text-primary"> Unemployment</span>
         </p>
         <TypewriterEffectSmooth words={words} />
       </div>

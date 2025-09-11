@@ -128,7 +128,7 @@ export const TypewriterEffectSmooth = ({
                 <span
                   key={`char-${index}`}
                   className={cn(
-                    `${geistLato.className} bg-[linear-gradient(180deg, rgba(255,255,255,0.9) 10%, rgba(255,220,180,0.9) 50%, oklch(0.6724 0.1308 38.7559 / 0.95) 100%
+                    `${geistLato.className} bg-clip-text text-transparent bg-gradient-to-b from-foreground to-primary
 )]`,
                     word.className
                   )}
