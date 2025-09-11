@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { ConnectDB } from "./db/ConnectDB.ts";
 import authRoutes from "./routes/Auth.route.ts";
+import challengeRoutes from "./routes/Challenge.route.ts";
+import challengeAnalysisRoutes from "./routes/ChallengeAnalysis.route.ts";
 
 dotenv.config({ path: ".env" });
 
@@ -38,6 +40,8 @@ app.get("/", (req, res) => {
   res.send("Hello From the server");
 });
 app.use("/api/v1", authRoutes);
+app.use("/api/v1", challengeRoutes);
+app.use("/api/v1", challengeAnalysisRoutes);
 
 app.listen(process.env.PORT, () => {
   ConnectDB();

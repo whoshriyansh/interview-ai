@@ -20,6 +20,9 @@ importers:
 
   apps/server:
     dependencies:
+      '@repo/schemas':
+        specifier: workspace:*
+        version: link:../../packages/schemas
       bcrypt:
         specifier: ^6.0.0
         version: 6.0.0
@@ -48,6 +51,12 @@ importers:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@22.15.3)(typescript@5.9.2)
     devDependencies:
+      '@repo/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
       '@types/bcrypt':
         specifier: ^6.0.0
         version: 6.0.0
