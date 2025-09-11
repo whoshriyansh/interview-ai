@@ -35,33 +35,30 @@ function ListItem({
 const Navbar = () => {
   const components: { title: string; href: string; description: string }[] = [
     {
-      title: "Analyses",
-      href: "/docs/primitives/alert-dialog",
-      description:
-        "A modal dialog that interrupts the user with important content and expects a response.",
+      title: "Coding Challenge",
+      href: "/generate-challenge",
+      description: "Get a coding challenge based on your experience and stack",
     },
     {
-      title: "Problems",
-      href: "/docs/primitives/hover-card",
-      description:
-        "For sighted users to preview content available behind a link.",
+      title: "Analysis",
+      href: "#",
+      description: "Coming Soon",
     },
     {
-      title: "Mock Interview",
-      href: "/docs/primitives/progress",
-      description:
-        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      title: "Roadmap Learning",
+      href: "#",
+      description: "Coming Soon",
     },
   ];
 
   return (
-    <div className="bg-background w-screen py-4 border-b border-primary/50">
+    <div className="bg-background w-screen py-2 border-b border-primary/50">
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Image
             src="/assets/interviewai.png"
-            width={200}
-            height={400}
+            width={130}
+            height={200}
             alt="Logo of the inetrview ai"
           />
         </div>
@@ -100,15 +97,21 @@ const Navbar = () => {
                   <ul className="grid w-[250px] gap-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link
+                          target="_blank"
+                          href="https://github.com/whoshriyansh/interview-ai"
+                        >
                           <div className="font-medium">Github</div>
                           <div className="text-muted-foreground">
-                            See more of my work here
+                            See the code from here
                           </div>
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link
+                          target="_blank"
+                          href="https://www.linkedin.com/in/whoshriyansh/"
+                        >
                           <div className="font-medium">Linkedin</div>
                           <div className="text-muted-foreground">
                             Let's connect on Linkedin
@@ -116,7 +119,10 @@ const Navbar = () => {
                         </Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link href="#">
+                        <Link
+                          target="_blank"
+                          href="https://whoshriyansh.netlify.app/"
+                        >
                           <div className="font-medium">Portfolio</div>
                           <div className="text-muted-foreground">
                             See other projects I have done
@@ -127,14 +133,14 @@ const Navbar = () => {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuLink
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
                   <Link href="/docs">Docs</Link>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>

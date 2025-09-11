@@ -7,10 +7,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex overflow-hidden w-screen h-screen">
-      <div className="flex flex-col flex-1 overflow-hidden">
-        <main className="overflow-auto flex-1">{children}</main>
-      </div>
+    <div className="h-screen w-screen flex flex-col overflow-hidden">
+      {/* Navbar */}
+      <header className="shrink-0">
+        <Navbar />
+      </header>
+
+      {/* Main content */}
+      <main className="flex-1 overflow-y-auto overflow-x-hidden mt-4">
+        {children}
+      </main>
     </div>
   );
 }
