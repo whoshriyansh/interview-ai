@@ -1,13 +1,13 @@
 import bcrypt from "bcrypt";
-import { ConnectDB } from "../db/ConnectDB";
-import { UserModel } from "../models/User.model";
-import { Request, Response } from "express";
+import { ConnectDB } from "../db/ConnectDB.ts";
+import { UserModel } from "../models/User.model.ts";
+import type { Request, Response } from "express";
 import {
   errorResponse,
   successResponse,
   validationResponse,
-} from "../response/ApiResponse";
-import { generateAccessToken, generateRefreshToken } from "../utils/jwt";
+} from "../response/ApiResponse.ts";
+import { generateAccessToken, generateRefreshToken } from "../utils/jwt.ts";
 import jwt from "jsonwebtoken";
 
 const secretKey = process.env.JWT_SECRET || "your_super_secret_key";

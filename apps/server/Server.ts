@@ -5,7 +5,8 @@ import cors from "cors";
 import { ConnectDB } from "./db/ConnectDB.ts";
 import authRoutes from "./routes/Auth.route.ts";
 
-dotenv.config();
+dotenv.config({ path: ".env" });
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());

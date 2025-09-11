@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
 
-import { geistKode } from "@/lib/fonts";
+import { geistLato } from "@/lib/fonts";
 
 export const TypewriterEffect = ({
   words,
@@ -128,7 +128,8 @@ export const TypewriterEffectSmooth = ({
                 <span
                   key={`char-${index}`}
                   className={cn(
-                    `${geistKode.className} bg-[linear-gradient(180deg,rgba(255,255,255,0.80)_30%,rgba(195,170,255,0.80)_80%,rgba(109,49,219,0.80)_100%)] bg-clip-text text-transparent`,
+                    `${geistLato.className} bg-[linear-gradient(180deg, rgba(255,255,255,0.9) 10%, rgba(255,220,180,0.9) 50%, oklch(0.6724 0.1308 38.7559 / 0.95) 100%
+)]`,
                     word.className
                   )}
                 >

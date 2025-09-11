@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-dotenv.config({ path: ".env.local" });
+dotenv.config({ path: ".env" });
 
 global.mongoose = {
   conn: null,
   promise: null,
 };
+console.log("Loaded API Key:", process.env.GROQ_API_KEY ? "Yes ✅" : "No ❌");
 
 const MONGODB_URI = process.env.MONGO_URI;
 

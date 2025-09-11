@@ -1,7 +1,6 @@
-// lib/fonts.ts
-import { Kode_Mono, Inter } from "next/font/google";
+import { Lato, Inter } from "next/font/google";
 
-export const geistKode = Kode_Mono({
+export const geistLato = Lato({
   weight: ["400", "700"],
   subsets: ["latin"],
 });

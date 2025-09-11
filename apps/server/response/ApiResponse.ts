@@ -14,7 +14,7 @@
  * @param {Object} data
  */
 
-import { Response } from "express";
+import type { Response } from "express";
 
 export const successResponse = (
   res: Response,
