@@ -1,11 +1,8 @@
 import Groq from "groq-sdk";
 import type { Response, Request } from "express";
-import dotenv from "dotenv";
 //TODO: Fix the path as it will just waste the concept of turbo repo
-import { codeAnalysisRequestSchema } from "../../../packages/schemas/src/validation/ChallengeAnalysis.ts";
-import { errorResponse, successResponse } from "../response/ApiResponse.ts";
-
-dotenv.config({ path: ".env" });
+import { codeAnalysisRequestSchema } from "@repo/schemas/validation/ChallengeAnalysis";
+import { errorResponse, successResponse } from "../response/ApiResponse.js";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -39,7 +36,7 @@ Generate the Analyses on the solution based on context.`;
     }
 
     return successResponse(res, 201, "Analysis Generated", analyses);
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
     return errorResponse(res, 500, "Something went wrong", error.message);
   }

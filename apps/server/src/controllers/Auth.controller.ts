@@ -1,13 +1,13 @@
 import bcrypt from "bcrypt";
-import { ConnectDB } from "../db/ConnectDB.ts";
-import { UserModel } from "../models/User.model.ts";
+import { ConnectDB } from "../db/ConnectDB.js";
+import { UserModel } from "../models/User.model.js";
 import type { Request, Response } from "express";
 import {
   errorResponse,
   successResponse,
   validationResponse,
-} from "../response/ApiResponse.ts";
-import { generateAccessToken, generateRefreshToken } from "../utils/jwt.ts";
+} from "../response/ApiResponse.js";
+import { generateAccessToken, generateRefreshToken } from "../utils/jwt.js";
 import jwt from "jsonwebtoken";
 
 const secretKey = process.env.JWT_SECRET || "your_super_secret_key";
@@ -65,7 +65,7 @@ export const SignUp = async (req: Request, res: Response) => {
       user: parsedObject,
       accessToken,
     });
-  } catch (error) {
+  } catch (error: any) {
     return errorResponse(res, 500, "Something went wrong", error);
   }
 };
@@ -119,7 +119,7 @@ export const SignIn = async (req: Request, res: Response) => {
       user: parsedObject,
       accessToken,
     });
-  } catch (error) {
+  } catch (error: any) {
     return errorResponse(res, 500, "Something went wrong", error);
   }
 };

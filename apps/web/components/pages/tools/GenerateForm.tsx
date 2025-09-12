@@ -85,7 +85,7 @@ export function GenerateChallengeForm({
       onLoadingChange?.(true);
 
       const response = await axios.post(
-        "http://localhost:8001/api/v1/challenge-request",
+        `${process.env.NEXT_PUBLIC_API_URL}/challenge-request`,
         values
       );
       toast.success("Hurrah!", {

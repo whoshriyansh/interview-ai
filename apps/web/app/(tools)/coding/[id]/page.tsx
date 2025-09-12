@@ -63,7 +63,7 @@ const CodingPage = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:8001/api/v1/challenge-analysis",
+        `${process.env.NEXT_PUBLIC_API_URL}/challenge-analysis`,
         payload
       );
 

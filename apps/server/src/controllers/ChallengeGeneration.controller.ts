@@ -1,11 +1,8 @@
 import Groq from "groq-sdk";
 import type { Response, Request } from "express";
-import dotenv from "dotenv";
 //TODO: Fix the path
-import { challengeRequestSchema } from "../../../packages/schemas/src/validation/ChallengeRequest.ts";
-import { errorResponse, successResponse } from "../response/ApiResponse.ts";
-
-dotenv.config({ path: ".env" });
+import { challengeRequestSchema } from "@repo/schemas/validation/ChallengeRequest";
+import { errorResponse, successResponse } from "../response/ApiResponse.js";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -42,7 +39,7 @@ Generate a coding challenge for me to solve.`;
     }
 
     return successResponse(res, 201, "Coding Challenge Generated", challenge);
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
     return errorResponse(res, 500, "Something went wrong", error.message);
   }

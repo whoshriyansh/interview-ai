@@ -3,9 +3,9 @@ import {
   SignUp,
   SignIn,
   RefreshToken,
-} from "../controllers/Auth.controller.ts";
+} from "../controllers/Auth.controller.js";
 
-const router = Router();
+const router: Router = Router();
 
 router.post("/signup", SignUp);
 router.post("/signin", SignIn);

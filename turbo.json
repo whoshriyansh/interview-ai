@@ -4,8 +4,16 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": [
+        "MONGO_URI",
+        "JWT_SECRET",
+        "PORT",
+        "ALLOWED_ORIGINS",
+        "GROQ_API_KEY",
+        "NEXT_PUBLIC_API_URL"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -15,7 +23,15 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": [
+        "MONGO_URI",
+        "JWT_SECRET",
+        "PORT",
+        "ALLOWED_ORIGINS",
+        "GROQ_API_KEY",
+        "NEXT_PUBLIC_API_URL"
+      ]
     }
   }
 }
