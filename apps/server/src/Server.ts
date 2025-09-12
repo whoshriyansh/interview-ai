@@ -34,10 +34,10 @@ app.use("/api/v1", challengeAnalysisRoutes);
 
 ConnectDB();
 
-if (process.env.VERCEL === undefined) {
-  app.listen(process.env.PORT || 3000, () => {
-    console.log(`The app is running on PORT: ${process.env.PORT || 3000}`);
-  });
-}
+// if (process.env.VERCEL === undefined) {
+//   app.listen(process.env.PORT || 3000, () => {
+//     console.log(`The app is running on PORT: ${process.env.PORT || 3000}`);
+//   });
+// }
 
 export default app;
