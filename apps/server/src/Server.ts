@@ -24,11 +24,16 @@ app.use(
 app.get("/", (req, res) => {
   res.send("Hello From the server");
 });
+
+app.get("/health", (req, res) => {
+  res.send("App is Running and working fine");
+});
+
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", challengeRoutes);
 app.use("/api/v1", challengeAnalysisRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3001, () => {
   ConnectDB();
-  console.log(`App is runing on port ${process.env.PORT}`);
+  console.log(`App is runing on port ${process.env.PORT || 3001}`);
 });
