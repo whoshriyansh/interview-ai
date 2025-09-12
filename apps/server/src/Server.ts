@@ -20,7 +20,6 @@ app.use(
   })
 );
 
-ConnectDB();
 app.get("/", (req, res) => {
   res.send("Hello From the server");
 });
@@ -33,13 +32,12 @@ app.use("/api/v1", authRoutes);
 app.use("/api/v1", challengeRoutes);
 app.use("/api/v1", challengeAnalysisRoutes);
 
-export default app;
+ConnectDB();
 
-if (typeof process.env.VERCEL !== "undefined") {
-  // Vercel env is set, so don't listen
-} else {
-  const PORT = process.env.PORT || 8001;
-  app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+if (process.env.VERCEL === undefined) {
+  app.listen(process.env.PORT || 3000, () => {
+    console.log(`The app is running on PORT: ${process.env.PORT || 3000}`);
   });
 }
+
+export default app;
